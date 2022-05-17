@@ -1,0 +1,17 @@
+.carousel-item {
+    max-height: 25vh;
+}
+
+@media (min-width: 1250px) {
+    .carousel-item {
+        max-height: 50vh;;
+    }
+}
+
+.description {
+    text-align: justify;
+}
+
+.prestations img {
+    height: 25vh;
+}
