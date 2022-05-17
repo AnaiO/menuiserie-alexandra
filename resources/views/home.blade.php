@@ -25,7 +25,7 @@
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <button>Demander un devis</button>
+                    <button class="btn">Demander un devis</button>
                 </div>
             </div>
             <div class="card">
@@ -34,7 +34,7 @@
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <button>Demander un devis</button>
+                    <button class="btn">Demander un devis</button>
                 </div>
             </div>
             <div class="card">
@@ -43,19 +43,23 @@
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <button>Demander un devis</button>
+                    <button class="btn">Demander un devis</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- END PRESTATIONS -->
 
+    <div class="container text-center m-auto p-5">
+        <img src="{{ asset('/img/outils.svg') }}" width="500" alt="Dessin de deux marteaux qui se croisent" class="img-fluid">
+    </div>
+
     <!-- REALISATIONS -->
     <div class="container pt-4 realisations">
-        <h2 class="fs-1">Réalisations</h2>
+        <h2 class="fs-1 text-sm-center text-lg-start text-">Réalisations</h2>
 
         <div class="d-flex justify-content-between flex-wrap">
-            <div class="card" style="width: 18rem;">
+            <div class="card m-auto mb-4" style="width: 18rem;">
                 <img src={{ asset('/img/chaise.jpg') }} class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -64,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card m-auto mb-4" style="width: 18rem;">
                 <img src={{ asset('/img/chaise.jpg') }} class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -73,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card m-auto mb-4" style="width: 18rem;">
                 <img src={{ asset('/img/chaise.jpg') }} class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -82,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card m-auto mb-4" style="width: 18rem;">
                 <img src={{ asset('/img/chaise.jpg') }} class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>

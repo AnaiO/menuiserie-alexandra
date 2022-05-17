@@ -1,24 +1,28 @@
 <header>
     <!-- mobile navbar -->
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
-        <a class="navbar-brand" href="#">Menuiserie</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#prestations">Prestations</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#realisation">Réalisations</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-            </li>
-            </ul>
-        </div>
+            <a class="navbar-brand" href="#">Menuiserie</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prestations">Prestations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#realisation">Réalisations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- <div>
+                 QUEL COÛT POUR VOS TRAVAUX?
+    OBTENIR UN DEVIS »
+                </div> -->
+            </div>
         </div>
     </nav>
     <!-- /end mobile Navbar-->

@@ -1,3 +1,16 @@
+h1, h2, h3, h4, h5 {
+    color: #65000B;
+}
+
+footer {
+    background-color: #65000B;
+}
+
+.btn {
+    background-color: #65000B;
+    color: #FFFFFF;
+}
+
 .carousel-item {
     max-height: 25vh;
 }
@@ -15,3 +28,18 @@
 .prestations img {
     height: 25vh;
 }
+
+.prestations .card {
+    min-width: 250px;
+}
+
+.navbar {
+    background-color: #65000B;
+}
+li a {
+    color: #65000B;
+}
+
+/* .hamer {
+    height: 30vh;
+} */
