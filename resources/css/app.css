@@ -1,0 +1,38 @@
+.header-background {
+    background-image: url('../../public/img/home-background.jpg');
+    height: 400px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.red {
+    width: 50%;
+    height: 50%;
+    background-color: red;
+}
+
+.fa-1x {
+    font-size: 1.5rem;
+  }
+  .navbar-toggler.toggler-example {
+    cursor: pointer;
+  }
+  .dark-blue-text {
+    color: #0A38F5;
+  }
+  .dark-pink-text {
+    color: #AC003A;
+  }
+  .dark-amber-text {
+    color: #ff6f00;
+  }
+  .dark-teal-text {
+    color: #004d40;
+  }
+
+  body {
+      background-color: red;
+  }
