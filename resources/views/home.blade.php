@@ -55,7 +55,7 @@
     </div>
 
     <!-- REALISATIONS -->
-    <div class="container pt-4 realisations">
+    <div class="container pt-4 pb-5 realisations">
         <h2 class="fs-1 text-sm-center text-lg-start text-">Réalisations</h2>
 
         <div class="d-flex justify-content-between flex-wrap">
@@ -98,6 +98,43 @@
     </div>
     <!-- END REALISATIONS -->
 
+    <div class="container text-center m-auto p-5">
+        <img src="{{ asset('/img/raclette.svg') }}" width="500" alt="Dessin d'un outils de menuisier" class="img-fluid">
+    </div>
+
+    <!-- CONTACT -->
+    <div class="container pb-5">
+        <h2 class="fs-1 text-center">Demande de devis</h2>
+        <div class="px-5 w-50 border border-dotted m-auto">
+            <form action="#" method="post" class="p-5 d-flex flex-column">
+                <div class="d-flex gap-4">
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Adresse mail</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Téléphone</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-check-label" for="exampleCheck1">Message</label>
+                    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- END CONTACT -->
 
 @endsection
 
