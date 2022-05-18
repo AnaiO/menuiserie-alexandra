@@ -1,4 +1,4 @@
-<footer class="container-fluid text-white pt-5 d-flex flex-wrap">
+<footer class="container-fluid text-white pt-5 px-0 d-flex flex-column flex-wrap">
     <div class="container d-flex justify-content-between">
         <div class="h-100 min-vw-50">
             <h5 class="text-white">CONTACT</h5>
@@ -7,15 +7,14 @@
             <p>Tél : Afficher le téléphone</p>
             <p>Email : Nous envoyer un email</p>
         </div>
-        <div class="h-100 min-vw-50">
-            <form class="d-flex flex-column justify-content-between h-100" action="">
-                <label for="">Une question, un devis ?</label>
-                <input type="textarea" name="" id="">
-                <button class="btn border-white">Demander un devis</button>
-            </form>
+        <div class="h-100 min-vw-50 d-flex flex-column">
+            <a href="#presentation" id="">A propos</a>
+            <a href="#prestations" id="">Prestations</a>
+            <a href="#realisations" id="">Realisations</a>
         </div>
         
     </div>
     <!-- <a class="text-white" href='https://fr.freepik.com/photos/fond'>Fond photo créé par pvproductions - fr.freepik.com</a>
     <a class="text-white" href='https://fr.freepik.com/vecteurs/affaires'>Affaires vecteur créé par macrovector - fr.freepik.com</a> -->
+    <div class="bg-light text-center text-black fs-10">© 2022 – website GreenCodin</div>
 </footer>

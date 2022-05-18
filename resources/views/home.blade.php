@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container" id="presentation">
         <h1 class="p-4 text-center fs-1">Menuiserie sur La Réole</h1>
         <p class="text-justify description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat eros, posuere congue magna vel, semper tristique tortor. Integer eu justo ac justo eleifend vehicula eu a velit. Nunc aliquam, augue at aliquet gravida, enim eros tincidunt velit, a euismod nulla nunc id quam. Sed rhoncus velit at auctor sagittis. Cras vitae mi vel felis venenatis fringilla sit amet ac turpis. Fusce odio purus, viverra quis sollicitudin vel, interdum id lacus. Fusce sed felis non tortor sagittis gravida a ut metus. Aenean luctus libero nec augue faucibus, eget ullamcorper nulla congue. Ut at consectetur leo. In sed consequat metus. Curabitur finibus tortor quis commodo fermentum. Cras sit amet lectus vitae leo tristique fringilla et pulvinar orci. Nulla at consectetur nibh.
@@ -16,7 +16,7 @@
 
 
     <!-- PRESTATIONS -->
-    <div class="container pt-4 prestations">
+    <div class="container pt-4 prestations" id="prestations">
         <h2 class="fs-1">Prestations</h2>
         <div class="card-group">
             <div class="card">
@@ -55,7 +55,7 @@
     </div>
 
     <!-- REALISATIONS -->
-    <div class="container pt-4 pb-5 realisations">
+    <div class="container pt-4 pb-5 realisations" id="realisations">
         <h2 class="fs-1 text-sm-center text-lg-start text-">Réalisations</h2>
 
         <div class="d-flex justify-content-between flex-wrap">
@@ -103,7 +103,7 @@
     </div>
 
     <!-- CONTACT -->
-    <div class="container pb-5">
+    <div id="contact" class="container pb-5">
         <h2 class="fs-1 text-center">Demande de devis</h2>
         <div class="px-5 w-50 border border-dotted m-auto">
             <form action="#" method="post" class="p-5 d-flex flex-column">
