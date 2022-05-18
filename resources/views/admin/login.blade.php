@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container w-50 p-3">
-        <form action="" method="POST" class="align-middle">
+        <form action="{{ route('login') }}" method="POST" class="align-middle">
             @csrf
 
             <div class="mb-3 mt-3">

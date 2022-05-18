@@ -13,12 +13,20 @@ class AuthController extends Controller
     {
         if ($request->isMethod('get')) {
 
+            if (Auth::check()) {
+                return redirect(route('admin.home'));
+            }
+
             return view('admin.login');
         }
 
         if ($request->isMethod('post')) {
-            $credentials = $request->only('email', 'password');
 
+            $credentials = $request->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required']
+            ]);
+            
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
     
@@ -33,7 +41,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Auth::logout();
-        return redirect()->intended('admin.login');
+        if (Auth::check()) {
+            Auth::logout();
+        }
+        return redirect()->intended('login');
     }
 }
