@@ -29,6 +29,6 @@ Route::match(['GET', 'POST'], '/login', [AuthController::class, 'login'])->name(
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
-Route::prefix('admin')->group(function () {
+Route::middleware('auth:web')->prefix('admin')->group(function () {
     Route::match(['GET', 'POST'], '/', [AdminHomeController::class, 'home'])->name('admin.home');
 });

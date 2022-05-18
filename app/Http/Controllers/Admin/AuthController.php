@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -21,11 +22,11 @@ class AuthController extends Controller
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
     
-                return redirect()->intended('admin.home');
+                return redirect()->intended(route('admin.home'));
             }
 
             return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
+                'email' => 'Une erreur est survenue, réessayez',
             ])->onlyInput('email');
         } 
     }

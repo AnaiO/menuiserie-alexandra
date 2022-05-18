@@ -16,8 +16,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="pwd" class="form-label">Password:</label>
-                <input type="password" class="form-control @error('password') border-red @enderror" id="pwd" placeholder="Enter password" name="pswd">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control @error('password') border-red @enderror" id="pwd" placeholder="Enter password" name="password">
                 @error('password')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
