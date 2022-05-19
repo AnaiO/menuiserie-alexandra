@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\PrestationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth:web')->prefix('admin')->group(function () {
     Route::match(['GET', 'POST'], '/', [AdminHomeController::class, 'home'])->name('admin.home');
+    Route::resource('prestations', PrestationController::class);
+    Route::resource('realisations', RealisationController::class);
+    Route::resource('images', ImageController::class);
 });

@@ -34,7 +34,7 @@ class AuthController extends Controller
             }
 
             return back()->withErrors([
-                'email' => 'Une erreur est survenue, réessayez',
+                'email' => 'Erreur identifiants, réessayez',
             ])->onlyInput('email');
         } 
     }
