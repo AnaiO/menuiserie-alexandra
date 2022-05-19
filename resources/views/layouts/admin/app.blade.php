@@ -12,97 +12,89 @@
         <!-- Fonts -->
 
         <!-- Styles -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         @yield('css')
     </head>
     <body>
-        <div id="app">
-            <div class="left-side-menu">
-                <div class="logo-box">
-                    <a class="logo logo-light text-center" href="{{ url('/admin') }}">
-                        <span class="logo-lg">
-                            LE LOGO
-                            {{-- <img src="{{ asset('img/logo_kweezine.svg') }}" alt="logo" height="22"> --}}
-                        </span>
+        <div id="app" class="container-fluid">
+            <div class="row">
+
+                <!-- SIDEBAR NAVIGATION-->
+                {{-- <div class="d-flex flex-column flex-shrink-0 p-3 bg-light  col-md-3" style="width: 280px;">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                        <span class="fs-4">Sidebar</span>
                     </a>
-                </div>
-                <div class="h-100 menuitem-active">
-                    <div id="sidebar-menu">
-                        <ul id="side-menu">
-                            <li class="{{ (Route::current()->getName() == 'admin.home') ? 'menuitem-active' : null }}">
-                                <a href="{{ url('/admin') }}">
-                                    <i class="fa fa-home"></i>
-                                    <span>Dashboard</span>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                                <a href="{{ route('admin.home') }}" class="nav-link {{ (Route::current()->getName() === 'admin.home' ? 'active' : null) }}" aria-current="page">
+                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.prestations.index') }}" class="nav-link link-dark {{ (Route::current()->getName() === 'admin.prestations.index' ? 'active' : null) }}">
+                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                                Prestations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.realisations.index') }}" class="nav-link link-dark {{ (Route::current()->getName() === 'admin.realisations.index' ? 'active' : null) }}">
+                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                                Realisations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.images.index') }}" class="nav-link link-dark {{ (Route::current()->getName() === 'admin.images.index' ? 'active' : null) }}">
+                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                                Images
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-dark">
+                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                                Aller sur le site
+                            </a>
+                        </li>
+                    </ul>
+                </div> --}}
+
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky pt-3">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                    Dashboard
                                 </a>
                             </li>
-                            <li class="{{ (Route::current()->getName() == 'admin.prestations') ? 'menuitem-active' : null }}">
-                                <a href="{{ route('admin.prestations.index') }}">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>Prestations</span>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                    Prestations
                                 </a>
                             </li>
-                            <li class="{{ (Route::current()->getName() == 'admin.realisations') ? 'menuitem-active' : null }}">
-                                <a href="{{ route('admin.realisations.index') }}">
-                                    <i class="fa fa-user"></i>
-                                    <span>Réalisations</span>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                                    Realisations
                                 </a>
                             </li>
-                            <li class="{{ (Route::current()->getName() == 'admin.images') ? 'menuitem-active' : null }}">
-                                <a href="{{ route('admin.images.index') }}">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>Images</span>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    Images
                                 </a>
                             </li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            <div class="content-page">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul id="errorList">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                <div class="navbar-custom">
-                    <div class="container-fluid d-flex justify-content-between align-items-center">
-                        <!-- Search bar -->
-                        <form class="d-flex col-6 align-items-center" method="GET" action="{{ route('admin.researchData') }}">
-                            @csrf
-                            <input type="text" class="form-control col-8" placeholder="Recherche" name="data">
-                            <select class="form-select col form-control" name="dataType">
-                                <option name="dataType" value="email">Email</option>
-                                <option name="dataType" value="payment_user">ID Mangopay</option>
-                                <option name="dataType" value="lastname">Nom</option>
-                                <option name="dataType" value="transactionId">ID Transaction</option>
-                                <option name="dataType" value="reservationId">ID Reservation</option>
-                            </select>
-                            <button type="submit" class="btn btn-outline-danger">OK</button>
-                        </form>
-                        <!-- endSearch bar -->
-                        <div class="d-flex col-3 justify-content-around align-items-center">
-                            <!-- Logout -->
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-danger">Logout</button>
-                            </form>
-                            <!-- endLogout -->
-                            <div>{{ Auth::user()->name }}</div>
-                            image user
-                            {{-- <img src="{{\App\Lib\Cloudinary\CloudinaryClient::genURL(Auth::user()->image_profile_url, ['width' => 40, 'ratio' => 1])}}" class="rounded-circle avatar-sm" alt="image_event" /> --}}
-                        </div>
-                    </div>
-                </div>
-                <main>
-                    <div class="content" style="height: 100%">
-                        <div class="container-fluid" style="height: 100%">
-                            @yield('content')
-                        </div>
-                    </div>
+                  </nav>
+                <!-- END SIDEBAR NAVIGATION-->
+
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    @yield('content')
                 </main>
             </div>
         </div>
