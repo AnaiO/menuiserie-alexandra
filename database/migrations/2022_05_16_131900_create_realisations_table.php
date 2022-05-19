@@ -19,6 +19,7 @@ class CreateRealisationsTable extends Migration
             $table->tinyText('title')->nullable(false);
             $table->string('description', 600)->nullable();
             $table->unsignedSmallInteger('price')->default(0)->nullable(false);
+            $table->boolean('active');
         });
     }
 

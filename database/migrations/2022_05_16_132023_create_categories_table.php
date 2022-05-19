@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name', 50)->nullable(false);
             $table->string('description', 600)->nullable(false);
+            $table->boolean('active');
         });
     }
 

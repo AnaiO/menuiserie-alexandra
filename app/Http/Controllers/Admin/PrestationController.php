@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Prestation;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PrestationController extends Controller
 {
@@ -14,7 +16,9 @@ class PrestationController extends Controller
      */
     public function index()
     {
-        //
+        $prestations = Prestation::all();
+
+        return response()->view('admin.prestations.list');
     }
 
     /**
@@ -24,7 +28,7 @@ class PrestationController extends Controller
      */
     public function create()
     {
-        //
+        return response()->view('admin.prestations.single');
     }
 
     /**
@@ -35,7 +39,15 @@ class PrestationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /**
+         * 2 verifier les datas reçues
+         * 3 enregistrer limage
+         * 4 enregistrer la prestation et lier image
+         * 5 rediriger vers show ou list
+         * 6) gerer les erreurs ou le succes
+         */
+
+
     }
 
     /**
@@ -46,7 +58,7 @@ class PrestationController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->view('admin.prestations.single');
     }
 
     /**
