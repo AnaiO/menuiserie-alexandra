@@ -75,18 +75,18 @@ class PrestationController extends Controller
             ->with('status', 'Nouvelle prestation enregistrée');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Prestation $prestation)
-    {
-        return response()->view('admin.prestations.show', [
-            'prestation' => $prestation
-        ]);
-    }
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function show(Prestation $prestation)
+    // {
+    //     return response()->view('admin.prestations.show', [
+    //         'prestation' => $prestation
+    //     ]);
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -94,9 +94,11 @@ class PrestationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Prestation $prestation)
     {
-        //
+        return response()->view('admin.prestations.single', [
+            'prestation' => $prestation
+        ]);
     }
 
     /**

@@ -1,7 +1,8 @@
 @extends('layouts.admin.app')
 
+@section('page_title', 'Mes prestations')
+
 @section('content')
-    <h2 class="h2 text-center mb-5">Mes prestations</h2>
     <button class="btn btn-primary mb-5">
         <a class="text-decoration-none text-white" href="{{ route('admin.prestations.create')}}">
             Nouvelle prestation
@@ -19,7 +20,7 @@
                         <th scope="col">prix</th>
                         <th scope="col">active</th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
+                        {{-- <th scope="col"></th> --}}
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -33,15 +34,15 @@
                             <td>{{ $prestation->price }}</td>
                             <td class="text-center">@if ($prestation->active) &#9989; @else &#10060; @endif</td>
                             <td class="col">
-                                <a class="text-decoration-none" href="{{ route('admin.prestations.show', ['prestation' => $prestation->id]) }}">
+                                <a class="text-decoration-none" href="{{ route('admin.prestations.edit', ['prestation' => $prestation->id]) }}">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a>
                             </td>
-                            <td class="col">
+                            {{-- <td class="col">
                                 <a class="text-decoration-none" href="{{ route('admin.prestations.show', ['prestation' => $prestation->id]) }}">
                                     Modifier
                                 </a>
-                            </td>
+                            </td> --}}
                             <td class="col">
                                 <form action="{{ route('admin.prestations.destroy', ['prestation' => $prestation->id]) }}" method="POST">
                                     @csrf

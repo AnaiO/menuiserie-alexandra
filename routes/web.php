@@ -32,7 +32,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth:web')->prefix('admin')->as('admin.')->group(function () {
     Route::match(['GET', 'POST'], '/', [AdminHomeController::class, 'home'])->name('home');
-    Route::resource('prestations', PrestationController::class);
+    Route::resource('prestations', PrestationController::class)->except('show');
     // Route::resource('realisations', RealisationController::class);
     // Route::resource('images', ImageController::class);
 });

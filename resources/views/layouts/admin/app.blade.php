@@ -60,6 +60,7 @@
                 <!-- END SIDEBAR NAVIGATION-->
 
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <h2 class="text-center mb-5 mt-3">@yield('page_title')</h2>
                     @yield('content')
                 </main>
             </div>
