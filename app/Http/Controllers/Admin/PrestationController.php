@@ -95,10 +95,9 @@ class PrestationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Prestation $prestation)
-    {
-        return response()->view('admin.prestations.single', [
-            'prestation' => $prestation
-        ]);
+    {   
+        // dd($prestation);
+        return response()->view('admin.prestations.single', compact($prestation));
     }
 
     /**
