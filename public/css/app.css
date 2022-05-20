@@ -36,3 +36,11 @@ footer {
 .navbar {
     background-color: #65000B;
 }
+
+.fa-trash {
+    color: red;
+}
+
+.fa-eye {
+    color: black;
+}

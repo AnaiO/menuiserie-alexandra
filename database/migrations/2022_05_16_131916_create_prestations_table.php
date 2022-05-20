@@ -19,7 +19,7 @@ class CreatePrestationsTable extends Migration
             $table->tinyText('title')->nullable(false);
             $table->string('description', 600);
             $table->unsignedSmallInteger('price')->default(0)->nullable(false);
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
         });
     }
 

@@ -14,52 +14,18 @@
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
         @yield('css')
     </head>
     <body>
         <div id="app" class="container-fluid">
             <div class="row">
-
-                <!-- SIDEBAR NAVIGATION-->
-                {{-- <div class="d-flex flex-column flex-shrink-0 p-3 bg-light  col-md-3" style="width: 280px;">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                        <span class="fs-4">Sidebar</span>
-                    </a>
-                    <hr>
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                                <a href="{{ route('admin.home') }}" class="nav-link {{ (Route::current()->getName() === 'admin.home' ? 'active' : null) }}" aria-current="page">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.prestations.index') }}" class="nav-link link-dark {{ (Route::current()->getName() === 'admin.prestations.index' ? 'active' : null) }}">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                                Prestations
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.realisations.index') }}" class="nav-link link-dark {{ (Route::current()->getName() === 'admin.realisations.index' ? 'active' : null) }}">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                                Realisations
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.images.index') }}" class="nav-link link-dark {{ (Route::current()->getName() === 'admin.images.index' ? 'active' : null) }}">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                                Images
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link link-dark">
-                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                                Aller sur le site
-                            </a>
-                        </li>
-                    </ul>
-                </div> --}}
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
 
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                     <div class="position-sticky pt-3">
