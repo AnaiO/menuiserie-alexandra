@@ -71,7 +71,7 @@ class PrestationController extends Controller
         // $fileName = $file->getClientOriginalName();
         // $path = Storage::put(time() . '.jpg', $request->image_url);
 
-        return redirect( route('admin.prestations.create') )
+        return redirect( route('admin.prestations.index') )
             ->with('status', 'Nouvelle prestation enregistrée');
     }
 
@@ -129,9 +129,6 @@ class PrestationController extends Controller
         $prestation->update($datas + [
             'image_id' => 1
         ]);
-
-        // dd($prestation);
-        // $prestation->save();
 
         return redirect( route('admin.prestations.edit', ['prestation' => $prestation->id]) )
             ->with('status', 'Prestation mise à jour.');
