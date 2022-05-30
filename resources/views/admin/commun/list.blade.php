@@ -1,15 +1,15 @@
 @extends('layouts.admin.app')
 
-@section('page_title', 'Mes prestations')
+@section('page_title', $page_title)
 
 @section('content')
     <button class="btn btn-primary mb-5">
-        <a class="text-decoration-none text-white" href="{{ route('admin.prestations.create')}}">
-            Nouvelle prestation
+        <a class="text-decoration-none text-white" href="{{ route('admin.'. $item_type .'s.create')}}">
+            {{ $button_create_title }}
         </a>
     </button>
 
-    @if (isset($prestations) && count($prestations))
+    @if (isset($items) && count($items))
         <div class="table-responsive">
             <table class="table table-striped table-sm">
                 <thead>
@@ -26,25 +26,20 @@
                 </thead>
                 <tbody>
 
-                    @foreach ($prestations as $prestation)
+                    @foreach ($items as $item)
                         <tr>
-                            <td>{{ $prestation->title }}</td>
-                            <td>{{ $prestation->description }}</td>
-                            <td>{{ $prestation->image->url }}</td>
-                            <td>{{ $prestation->price }}</td>
-                            <td class="text-center">@if ($prestation->active) &#9989; @else &#10060; @endif</td>
+                            <td>{{ $item->title }}</td>
+                            <td>{{ $item->description }}</td>
+                            <td>{{ $item->image->url }}</td>
+                            <td>{{ $item->price }}</td>
+                            <td class="text-center">@if ($item->active) &#9989; @else &#10060; @endif</td>
                             <td class="col">
-                                <a class="text-decoration-none" href="{{ route('admin.prestations.edit', ['prestation' => $prestation->id]) }}">
+                                <a class="text-decoration-none" href="{{ route('admin.'. $item_type .'s.edit', [$item_type => $item->id]) }}">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a>
                             </td>
-                            {{-- <td class="col">
-                                <a class="text-decoration-none" href="{{ route('admin.prestations.show', ['prestation' => $prestation->id]) }}">
-                                    Modifier
-                                </a>
-                            </td> --}}
                             <td class="col">
-                                <form action="{{ route('admin.prestations.destroy', ['prestation' => $prestation->id]) }}" method="POST">
+                                <form action="{{ route('admin.'. $item_type .'s.destroy', [$item_type => $item->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="border-0 text-red">
@@ -60,7 +55,7 @@
         </div>
 
     @else
-        Aucune prestation enregistrée en base.
+        <div class="mt-5 text-center">Aucune {{ $item_type }} enregistrée en base.</div> 
     @endif
 
 @endsection

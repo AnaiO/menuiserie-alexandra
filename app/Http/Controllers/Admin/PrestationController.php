@@ -18,11 +18,12 @@ class PrestationController extends Controller
      */
     public function index()
     {
-        $prestations = Prestation::all();
+        $items = Prestation::all();
+        $page_title = "Mes prestations";
+        $button_create_title = "Nouvelle prestation";
+        $item_type = 'prestation';
 
-        return response()->view('admin.prestations.list', [
-            'prestations' => $prestations
-        ]);
+        return response()->view('admin.commun.list', compact('items', 'page_title', 'button_create_title', 'item_type'));
     }
 
     /**
@@ -32,7 +33,11 @@ class PrestationController extends Controller
      */
     public function create()
     {
-        return response()->view('admin.prestations.single');
+        $page_title = "Nouvelle prestation";
+        $mode = "creation";
+        $item_type = "prestation";
+
+        return response()->view('admin.commun.single', compact('page_title', 'mode', 'item_type'));
     }
 
     /**
@@ -75,18 +80,6 @@ class PrestationController extends Controller
             ->with('status', 'Nouvelle prestation enregistrée');
     }
 
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show(Prestation $prestation)
-    // {
-    //     return response()->view('admin.prestations.show', [
-    //         'prestation' => $prestation
-    //     ]);
-    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -96,9 +89,12 @@ class PrestationController extends Controller
      */
     public function edit(Prestation $prestation)
     {   
-        return response()->view('admin.prestations.single', [
-            'prestation' => $prestation
-        ]);
+        $page_title = "Editer la prestation";
+        $mode = "edition";
+        $item_type = 'prestation';
+        $item = $prestation;
+
+        return response()->view('admin.commun.single', compact('page_title', 'item', 'mode', 'item_type'));
     }
 
     /**

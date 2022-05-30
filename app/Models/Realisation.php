@@ -11,6 +11,15 @@ class Realisation extends Model
 
     public $timestamps = false;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'image_description',
+        'image_id',
+        'price',
+        'active'
+    ];
+
     public function image()
     {
         return $this->belongsTo(Image::class);
