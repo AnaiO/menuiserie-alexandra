@@ -96,8 +96,9 @@ class PrestationController extends Controller
      */
     public function edit(Prestation $prestation)
     {   
-        // dd($prestation);
-        return response()->view('admin.prestations.single', compact($prestation));
+        return response()->view('admin.prestations.single', [
+            'prestation' => $prestation
+        ]);
     }
 
     /**
@@ -107,9 +108,33 @@ class PrestationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Prestation $prestation)
     {
-        //
+        $datas = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required|max:600',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image_description' => 'required|string|max:255',
+            'price' => 'numeric|required|regex:/^\d+(\.\d{1,2})?$/',
+            'active' => 'sometimes|regex:/^on$/'
+
+        ]);
+
+        if (!isset($request->active)) {
+            $datas['active'] = 0;
+        } else {
+            $datas['active'] = 1;
+        }
+
+        $prestation->update($datas + [
+            'image_id' => 1
+        ]);
+
+        // dd($prestation);
+        // $prestation->save();
+
+        return redirect( route('admin.prestations.edit', ['prestation' => $prestation->id]) )
+            ->with('status', 'Prestation mise à jour.');
     }
 
     /**
