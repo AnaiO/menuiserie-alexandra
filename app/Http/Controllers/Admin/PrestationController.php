@@ -23,7 +23,7 @@ class PrestationController extends Controller
         $button_create_title = "Nouvelle prestation";
         $item_type = 'prestation';
 
-        return response()->view('admin.commun.list', compact('items', 'page_title', 'button_create_title', 'item_type'));
+        return view('admin.commun.list', compact('items', 'page_title', 'button_create_title', 'item_type'));
     }
 
     /**
@@ -37,7 +37,7 @@ class PrestationController extends Controller
         $mode = "creation";
         $item_type = "prestation";
 
-        return response()->view('admin.commun.single', compact('page_title', 'mode', 'item_type'));
+        return view('admin.commun.single', compact('page_title', 'mode', 'item_type'));
     }
 
     /**
@@ -94,7 +94,7 @@ class PrestationController extends Controller
         $item_type = 'prestation';
         $item = $prestation;
 
-        return response()->view('admin.commun.single', compact('page_title', 'item', 'mode', 'item_type'));
+        return view('admin.commun.single', compact('page_title', 'item', 'mode', 'item_type'));
     }
 
     /**

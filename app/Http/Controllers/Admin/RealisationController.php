@@ -20,7 +20,7 @@ class RealisationController extends Controller
         $button_create_title = "Nouvelle réalisation";
         $item_type = 'realisation';
 
-        return response()->view('admin.commun.list', compact('items', 'page_title', 'button_create_title', 'item_type'));
+        return view('admin.commun.list', compact('items', 'page_title', 'button_create_title', 'item_type'));
     }
 
     /**
@@ -34,7 +34,7 @@ class RealisationController extends Controller
         $mode = "creation";
         $item_type = "realisation";
 
-        return response()->view('admin.commun.single', compact('page_title', 'mode', 'item_type'));    }
+        return view('admin.commun.single', compact('page_title', 'mode', 'item_type'));    }
 
     /**
      * Store a newly created resource in storage.
@@ -82,7 +82,7 @@ class RealisationController extends Controller
         $item_type = 'realisation';
         $item = $realisation;
 
-        return response()->view('admin.commun.single', compact('page_title', 'item', 'mode', 'item_type'));
+        return view('admin.commun.single', compact('page_title', 'item', 'mode', 'item_type'));
     }
 
     /**
