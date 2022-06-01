@@ -38,9 +38,19 @@ class ImageController extends Controller
 
     public function destroy(Image $image)
     {
-        $image->delete();
+        $nbPrestationsUsingImage = $image->prestations()->count();
+        $nbRealisationUsingImage = $image->realisations()->count();
 
-        return redirect(route('admin.images.index'))->with('status', "L'image a bien été supprimée.");
+        if ($nbPrestationsUsingImage = 0 || $nbRealisationUsingImage = 0) {
+            $image->delete();
+
+            return redirect(route('admin.images.index'))->with('status', "L'image a bien été supprimée.");
+            
+        } else {
+
+            return redirect(route('admin.images.index'))
+                ->with('danger', "Impossible de supprimer l'image, des prestations ou réalisations utilisent l'image. Modifiez dabord l'image des prestation(s) et réalisation(s) concernée(s)");
+        }
     }
 
     /**

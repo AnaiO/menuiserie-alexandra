@@ -25,6 +25,10 @@
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
+                @elseif (session('danger'))
+                    <div class="alert alert-danger">
+                        {{ session('danger') }}
+                    </div>
                 @endif
 
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
