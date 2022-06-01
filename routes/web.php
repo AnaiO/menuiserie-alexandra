@@ -36,5 +36,6 @@ Route::middleware('auth:web')->prefix('admin')->as('admin.')->group(function () 
     Route::match(['GET', 'POST'], '/', [AdminHomeController::class, 'home'])->name('home');
     Route::resource('prestations', PrestationController::class)->except('show');
     Route::resource('realisations', RealisationController::class)->except('show');
-    Route::resource('images', ImageController::class);
+    Route::resource('images', ImageController::class)->except('show', 'update');
+    Route::patch('/images/{image}/change-status', [ImageController::class, 'changeStatus'])->name('images.changeStatus');
 });

@@ -33,6 +33,38 @@ class ImageController extends Controller
     
         ]);
 
-        return view('admin.images.list')->with('status', "L'image a bien été enregistrée.");
+        return redirect(route('admin.images.index'))->with('status', "L'image a bien été enregistrée.");
+    }
+
+    public function destroy(Image $image)
+    {
+        $image->delete();
+
+        return redirect(route('admin.images.index'))->with('status', "L'image a bien été supprimée.");
+    }
+
+    /**
+     * Changes the active status of the image
+     * 
+     * @param Image $image The image to be activate
+     * or desactivate
+     * 
+     * @return void
+     */
+    public function changeStatus(Image $image)
+    {
+        if ($image->active === Image::VISIBLE) {
+            $image->active = Image::INVISIBLE;
+            $image->save();
+
+            return redirect(route('admin.images.index'))->with('status', "L'image est maintenant en mode invisible.");
+
+        } else {
+            $image->active = Image::VISIBLE;
+            $image->save();
+
+            return redirect(route('admin.images.index'))->with('status', "L'image est maintenant en mode visible.");
+
+        }
     }
 }

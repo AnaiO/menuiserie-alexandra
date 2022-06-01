@@ -16,4 +16,17 @@ class Image extends Model
         'created_at',
         'updated_at',
     ];
+
+    const VISIBLE = 1;
+    const INVISIBLE = 0;
+
+    public function prestations()
+    {
+        return $this->hasMany(Prestation::class);
+    }
+
+    public function realisations()
+    {
+        return $this->hasMany(Realisation::class);
+    }
 }

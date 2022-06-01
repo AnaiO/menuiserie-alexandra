@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{ $item->title }}</td>
                             <td>{{ $item->description }}</td>
-                            <td>{{ $item->image->url }}</td>
+                            <td>{{ $item->image->url ?? "Pas d'image disponible" }}</td>
                             <td>{{ $item->price }}</td>
                             <td class="text-center">@if ($item->active) &#9989; @else &#10060; @endif</td>
                             <td class="col">
