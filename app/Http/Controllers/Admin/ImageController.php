@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image as ImageIntervention;
+
 
 class ImageController extends Controller
 {
@@ -23,7 +25,9 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         //validation
+        // $originalImage = $request->file('image_url')->store('work', 'public');
         $path = $request->file('image_url')->store('work', 'public');
+        // $thumbnailImage = ImageIntervention::make($originalImage);
         // dd($path);
 
         $image = Image::create([
