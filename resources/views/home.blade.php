@@ -3,17 +3,22 @@
 @section('title', 'Accueil')
 
 @section('header')
-    @include('layouts.partials._header')
+    @include('layouts.partials._header_copy')
 @endsection
 
 @section('content')
+    <!-- COVER IMAGE -->
+    <div class="container-fluid m-0 p-0 overflow-hidden">
+        <img id="cover" src="/img/home-background(1).jpg" alt="">
+    </div>
+
+    <!-- INTRO -->
     <div class="container" id="presentation">
         <h1 class="p-4 text-center fs-1">Menuiserie sur La Réole</h1>
         <p class="text-justify description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat eros, posuere congue magna vel, semper tristique tortor. Integer eu justo ac justo eleifend vehicula eu a velit. Nunc aliquam, augue at aliquet gravida, enim eros tincidunt velit, a euismod nulla nunc id quam. Sed rhoncus velit at auctor sagittis. Cras vitae mi vel felis venenatis fringilla sit amet ac turpis. Fusce odio purus, viverra quis sollicitudin vel, interdum id lacus. Fusce sed felis non tortor sagittis gravida a ut metus. Aenean luctus libero nec augue faucibus, eget ullamcorper nulla congue. Ut at consectetur leo. In sed consequat metus. Curabitur finibus tortor quis commodo fermentum. Cras sit amet lectus vitae leo tristique fringilla et pulvinar orci. Nulla at consectetur nibh.
         </p>
     </div>
-
 
     <!-- PRESTATIONS -->
     <div class="container pt-4 prestations" id="prestations">

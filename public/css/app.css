@@ -1,13 +1,27 @@
+:root {
+    --main-color: #65000B;
+}
+
+body {
+    margin: O;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 h1, h2, h3, h4, h5 {
-    color: #65000B;
+    color: var(--main-color);
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 footer {
-    background-color: #65000B;
+    background-color: var(--main-color);
 }
 
 .btn {
-    background-color: #65000B;
+    background-color: var(--main-color);
     color: #FFFFFF;
 }
 
@@ -33,9 +47,9 @@ footer {
     min-width: 250px;
 }
 
-.navbar {
-    background-color: #65000B;
-}
+/* .navbar {
+    background-color: var(--main-color);
+} */
 
 .fa-trash {
     color: red;
@@ -43,4 +57,48 @@ footer {
 
 .fa-eye {
     color: black;
+}
+
+.logo_200 {
+    width: 140px;
+}
+
+.z-index-down {
+    /* z-index: -1; */
+    /* object-fit: cover; */
+    /* filter: blur(100px); */
+    /* background: radial-gradient(circle at 50% 50%,rgba(76, 0, 255, 1), rgba(76, 0, 255, 0)); */
+    /* opacity: 0.2; */
+}
+
+#cover {
+    -webkit-animation: zoom-in 5s linear;
+    animation: zoom-in 5s linear;
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+}
+
+@-webkit-keyframes zoom-in {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

@@ -25,16 +25,23 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         //validation
-        // $originalImage = $request->file('image_url')->store('work', 'public');
-        $path = $request->file('image_url')->store('work', 'public');
-        // $thumbnailImage = ImageIntervention::make($originalImage);
-        // dd($path);
+        // $imagePath = $request->file('image_url')->store('work', 'public');
+        $image = $request->file('image_url');
+        $originalPath = $image->store('work', 'public');
+
+        $hashnale = $image->hashName();
+
+        $thumbnailImage = ImageIntervention::make($image)->resize(200, 200)->save(storage_path() . '/app/public/thumbnails/' . $hashnale);
+        // dd($thumbnailImage, $image->getClientOriginalName(), $originalPath, $hashnale);
+            // ->save('public/' . $image->originalName);
+        // dd($thumbnailImage);
 
         $image = Image::create([
-            'url' => $path,
-            // 'description' =>,
+            'url' => $originalPath,
+            'thumbnail' => $thumbnailImage->dirname . '/' . $thumbnailImage-> basename,
             // 'active' =>,
-    
+            // 'description' =>,
+        
         ]);
 
         return redirect(route('admin.images.index'))->with('status', "L'image a bien été enregistrée.");
@@ -45,7 +52,7 @@ class ImageController extends Controller
         $nbPrestationsUsingImage = $image->prestations()->count();
         $nbRealisationUsingImage = $image->realisations()->count();
 
-        if ($nbPrestationsUsingImage = 0 || $nbRealisationUsingImage = 0) {
+        if ($nbPrestationsUsingImage = 0 && $nbRealisationUsingImage = 0) {
             $image->delete();
 
             return redirect(route('admin.images.index'))->with('status', "L'image a bien été supprimée.");
