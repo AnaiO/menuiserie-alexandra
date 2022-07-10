@@ -7,19 +7,23 @@
 @endsection
 
 @section('content')
-    <!-- COVER IMAGE -->
-    <div class="container-fluid m-0 p-0 overflow-hidden">
-        <img id="cover" src="/img/home-background(1).jpg" alt="">
-    </div>
-
     <!-- INTRO -->
-    <div class="container" id="presentation">
-        <h1 class="p-4 text-center fs-1">Menuiserie sur La Réole</h1>
-        <p class="text-justify description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat eros, posuere congue magna vel, semper tristique tortor. Integer eu justo ac justo eleifend vehicula eu a velit. Nunc aliquam, augue at aliquet gravida, enim eros tincidunt velit, a euismod nulla nunc id quam. Sed rhoncus velit at auctor sagittis. Cras vitae mi vel felis venenatis fringilla sit amet ac turpis. Fusce odio purus, viverra quis sollicitudin vel, interdum id lacus. Fusce sed felis non tortor sagittis gravida a ut metus. Aenean luctus libero nec augue faucibus, eget ullamcorper nulla congue. Ut at consectetur leo. In sed consequat metus. Curabitur finibus tortor quis commodo fermentum. Cras sit amet lectus vitae leo tristique fringilla et pulvinar orci. Nulla at consectetur nibh.
-        </p>
-    </div>
+    <div class="row position-relative p-0 m-0 align-items-center">
+        <!-- COVER IMAGE -->
+        <div class="col m-0 p-0 overflow-hidden">
+            <img id="cover" src="/img/home-background(1).jpg" alt="">
+        </div>
 
+        <!-- TEXT -->
+        <div class="col-xl-5 col-md-8 col-12 position-absolute ps-5" id="presentation">
+            <h1 class="pb-4 text-white fs-1">Menuiserie sur La Réole</h1>
+            <p class="text-justify text-white description">
+                Notre équipe d'experts sur Mérignac (proche Bordeaux), s'occupe de vos projets de construction et de rénovation d'habitat et vous propose des produits de qualité à tarif direct usine. Menuiseries intérieures et extérieures, notre société propose des portes, fenêtres, portails, volets...
+            </p>
+            <button class="btn mx-auto mt-4">Découvrez mes réalisations sur la région</button>
+        </div>
+    </div>
+   
     <!-- PRESTATIONS -->
     <div class="container pt-4 prestations" id="prestations">
         <h2 class="fs-1">Prestations</h2>
@@ -53,7 +57,6 @@
             </div>
         </div>
     </div>
-    <!-- END PRESTATIONS -->
 
     <div class="container text-center m-auto p-5">
         <img src="{{ asset('/img/outils.svg') }}" width="500" alt="Dessin de deux marteaux qui se croisent" class="img-fluid">
@@ -101,7 +104,6 @@
             </div>
         </div>
     </div>
-    <!-- END REALISATIONS -->
 
     <div class="container text-center m-auto p-5">
         <img src="{{ asset('/img/raclette.svg') }}" width="500" alt="Dessin d'un outils de menuisier" class="img-fluid">
@@ -139,8 +141,6 @@
             </form>
         </div>
     </div>
-    <!-- END CONTACT -->
-
 @endsection
 
 @section('footer')

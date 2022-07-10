@@ -1,15 +1,24 @@
 :root {
     --main-color: #65000B;
+    --title-font: 'Vollkorn', serif;;
+    --parag-font: 'Montserrat', sans-serif;
+
 }
 
 body {
     margin: O;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--parag-font);
 }
 
 h1, h2, h3, h4, h5 {
     color: var(--main-color);
+    font-family: var(--title-font);
+}
+
+p {
+    font-family: var(--parag-font);
 }
 
 header {
@@ -20,19 +29,15 @@ footer {
     background-color: var(--main-color);
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .btn {
     background-color: var(--main-color);
     color: #FFFFFF;
-}
-
-.carousel-item {
-    max-height: 25vh;
-}
-
-@media (min-width: 1250px) {
-    .carousel-item {
-        max-height: 50vh;;
-    }
 }
 
 .description {

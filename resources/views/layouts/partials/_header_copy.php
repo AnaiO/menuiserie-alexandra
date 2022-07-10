@@ -1,4 +1,4 @@
-<header class="container-fluid sticky-top">
+<header class="container-fluid sticky-top p-0 shadow">
     <div class="container-fluid position-fixed d-flex justify-content-end">
         <div class="d-flex align-items-center me-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
